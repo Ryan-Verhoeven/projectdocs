@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-10">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white shadow fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-wlate-600">
+            <a href="index.html" data-link="home" >
+                <h1>BPHTML10TWNDJS</h1>
+            </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="nav-toggle" class="md:hidden text-2xl focus:outline-none">
+            ☰
+            </button>
+
+            <!-- Desktop links -->
+            <ul id="nav-links" class="hidden md:flex space-x-4 text-gray-700">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Mobile dropdown -->
+        <ul id="nav-mobile"
+            class="hidden md:hidden flex flex-col space-y-2 pb-4 text-gray-700 font-medium overflow-hidden max-h-0 transition-all duration-300">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container max-w-4xl mx-auto px-4">
+        <!-- Section 1 -->
+        <section class="prose prose-neutral max-w-none mt-12">
+            <h1 class="font-bold mb-12">
+                Local installation vs Publish on Netlify: How "npm install" and "npm run build" work    
+            </h1>
+
+            <p class="mt-6">When you run:</p>
+            <pre><code>npm install</code></pre>
+
+            <p>
+                <code>npm install</code> installs all dependencies listed in
+                <code>package.json</code> into the <code>node_modules</code> directory on your
+                local system.
+            </p>
+
+            <p>
+                <code>npm run build</code> is a shortcut for running the build script defined
+                in the repo’s <code>package.json</code> file.
+            </p>
+
+            <p class="mt-6">When you execute:</p>
+
+            <pre><code>npm run build</code></pre>
+
+            <p>
+                npm looks inside <code>package.json</code>, locates the build script, and
+                runs the command it specifies. This makes <code>npm run build</code>
+                essential — it’s what creates the actual stylesheet your website uses.
+            </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="prose prose-neutral max-w-none mt-12">
+            <h1>
+                An example of what it does in practice — when installing a repo locally:
+            </h1>
+
+            <ol>
+                <li class="mt-6">
+                    <p>
+                        <strong>npm install</strong> → Downloads all build tools into
+                        <code>node_modules</code>.
+                    </p>
+
+                    <p>
+                        <code>npm i</code> (short for <code>npm install</code>) recreates the full
+                        development environment for a project. npm reads the
+                        <code>package.json</code> file to determine which dependencies and
+                        devDependencies are required, then downloads all of those packages —
+                        including Tailwind CSS, PostCSS, Autoprefixer, and build tools like Vite
+                        or Webpack, plus all nested dependencies.
+                    </p>
+
+                    <p>
+                        These files are placed into the <code>node_modules</code> folder, which
+                        can contain thousands of files needed to build or run the project
+                        locally. npm also creates or updates <code>package-lock.json</code> to
+                        record the exact versions installed, ensuring every future installation
+                        reproduces the same environment.
+                    </p>
+
+                    <p>
+                        In short, <strong>npm i = “install everything this project depends on so
+                        it can run and build exactly as intended.”</strong>
+                    </p>
+                </li>
+
+                <li class="mt-6">
+                    <p><strong>npm run build</strong> → Creates a production version of your site:</p>
+
+                    <ul>
+                        <li>Compiles Tailwind (final CSS goes into <code>dist/</code> or <code>public/</code>)</li>
+                        <li>Outputs everything into a deployable folder (<code>dist</code>, <code>public</code>, etc.)</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="prose prose-neutral max-w-none mt-12">
+            <h1>
+                Deploying on Netlify: the same commands are run automatically as part of the deploy procedure
+            </h1>
+
+            <p class="text-red-500 font-bold mt-6">
+                First of all: on GitHub or Netlify, you do <strong>not</strong> upload or
+                commit your <code>node_modules/</code> folder. Netlify installs all
+                dependencies automatically during its build process. It does not need or use
+                your local <code>node_modules</code> — it generates its own.
+            </p>
+
+            <p>
+                The <code>node_modules</code> folder contains thousands of generated
+                packages, which would make a repository extremely large. Netlify behaves
+                exactly like your local machine when it builds your project.
+            </p>
+
+            <p class="text-red-500 font-bold mt-6">
+                And second: change the following code in your package.json file:
+            </p>
+
+            <pre>
+                <code>
+"build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+                </code>
+            </pre>
+
+            <p>
+                And change it into:
+            </p>
+            <pre>
+                <code>
+"build": "tailwindcss -i ./src/input.css -o ./dist/output.css"
+                </code>
+            </pre>
+
+            <p>
+                --watch — Rebuild automatically
+Tailwind watches your project for changes.
+Every time you edit an HTML or CSS file, Tailwind automatically regenerates output.css.
+            </p>
+
+            <p>
+                The line "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch" tells Tailwind to take your source CSS file (src/input.css), process it, and generate the final compiled stylesheet in dist/output.css. The problem on Netlify is the --watch flag: it keeps the build process running forever, waiting for file changes. Netlify expects the build to finish and exit, but --watch never stops, so the deployment hangs or fails. For Netlify, the build script must run once and exit—so you should remove --watch
+            </p>
+
+
+
+            <h1 class="mt-6">
+                When Netlify deploys:
+            </h1>
+
+            <ol>
+                <li>It pulls your repo from GitHub</li>
+                <li>Runs <code>npm install</code></li>
+                <li>Re-creates <code>node_modules</code> on the server</li>
+                <li>Runs your build command (if set)</li>
+            </ol>
+
+            <h1 class="mt-6">
+                Configuring "npm run build" on Netlify
+            </h1>
+
+            <p>
+                To configure the build process, Netlify requires two settings during site
+                deployment: the <strong>Build command</strong> and the
+                <strong>Publish directory</strong>.
+            </p>
+
+            <p>
+                When your site is connected to GitHub, Netlify detects that the project uses
+                Node and prepares a build environment. To enable a proper Tailwind or
+                bundler build, open your site in the Netlify dashboard and go to:
+            </p>
+
+            <p><strong>Site Configuration → Build & deploy → Build settings</strong></p>
+
+            <div class="m-6">
+                <p>In the <strong>Build command</strong> field, enter:</p>
+
+                <pre><code>npm run build</code></pre>
+
+                <p>
+                    This tells Netlify to install all dependencies (via <code>npm install</code>)
+                    and then execute the build script from your project's
+                    <code>package.json</code>. This script typically compiles Tailwind CSS,
+                    processes PostCSS plugins, and bundles or optimizes assets.
+                </p>
+
+                <p>
+                    Next, Netlify needs to know where your final static files are output. This is
+                    the <strong>Publish directory</strong>. For Tailwind, Vite, or Webpack
+                    projects, this is usually:
+                </p>
+
+                <ul>
+                    <li><code>dist/</code></li>
+                    <li><code>build/</code></li>
+                </ul>
+
+                <p>
+                    If your project does not generate a separate build folder and serves files
+                    directly from the repository root, set the publish directory to:
+                </p>
+
+                <pre><code>/</code></pre>
+            </div>
+
+            <p class="font-bold">
+                Once these two fields are configured, Netlify will run the full build
+                pipeline on every deployment, ensuring your Tailwind CSS and other assets
+                are compiled and production-ready.
+            </p>
+        </section>
+    </div>
+
+    <!-- SCRIPT for accordion toggle -->
+    <script>
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+
+            content.classList.toggle('hidden');
+
+            // Update + / -
+            const icon = button.querySelector('span');
+            icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+            });
+        });
+
+        const navToggle = document.getElementById("nav-toggle");
+        const navMobile = document.getElementById("nav-mobile");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const navbar = document.getElementById("navbar");
+
+        /* -------------------------
+        1) SLIDE-DOWN MOBILE MENU
+        ------------------------- */
+        navToggle.addEventListener("click", () => {
+        if (navMobile.classList.contains("hidden")) {
+            navMobile.classList.remove("hidden");
+            navMobile.style.maxHeight = navMobile.scrollHeight + "px";
+        } else {
+            navMobile.style.maxHeight = "0px";
+            setTimeout(() => navMobile.classList.add("hidden"), 300);
+        }
+        });
+
+        /* -------------------------
+        2) ACTIVE LINK HIGHLIGHTING
+        ------------------------- */
+        function setActiveLink(name) {
+        navLinks.forEach(link => {
+            if (link.dataset.link === name) {
+            link.classList.add("text-blue-600", "font-semibold");
+            } else {
+            link.classList.remove("text-blue-600", "font-semibold");
+            }
+        });
+        }
+
+        navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            const page = link.dataset.link;
+            setActiveLink(page);
+        });
+        });
+
+        /* -------------------------
+        3) AUTO-HIDE ON SCROLL
+        ------------------------- */
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollPos > lastScrollTop && scrollPos > 50) {
+            // scrolling down
+            navbar.style.transform = "translateY(-100%)";
+        } else {
+            // scrolling up
+            navbar.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Styling en Layout - Ryan Verhoeven 1GDM2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'caveat': ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Caveat', cursive;
+        }
+        .nav-slider {
+            transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-500 to-purple-600 min-h-screen text-gray-800">
+    <!-- Header -->
+    <div class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-lg px-8 py-6 shadow-lg z-50 flex justify-between items-center">
+        <div class="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+            Ryan Verhoeven1GDM2
+        </div>
+        <button id="menuBtn" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold text-lg flex items-center gap-2 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300">
+            <span class="inline-block w-5 h-0.5 bg-white relative before:content-[''] before:absolute before:w-5 before:h-0.5 before:bg-white before:left-0 before:-top-1.5 after:content-[''] after:absolute after:w-5 after:h-0.5 after:bg-white after:left-0 after:bottom-1.5"></span>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <!-- Horizontale slider navigatie -->
+    <div id="navSlider" class="nav-slider fixed -top-full left-0 right-0 bg-gradient-to-br from-indigo-500 to-purple-600 z-40 shadow-2xl">
+        <button id="closeBtn" class="absolute top-6 right-8 bg-white/20 border-2 border-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center text-2xl hover:bg-white/30 hover:rotate-90 transition-all duration-300">
+            ×
+        </button>
+        <div class="py-24 px-8 max-w-7xl mx-auto">
+            <h2 id="navTitle" class="text-white text-5xl font-bold text-center mb-8 opacity-0 -translate-y-5 transition-all duration-500 delay-200">
+                Navigatie
+            </h2>
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none">
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zprogressiefile.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">HOME</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek1.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 1</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek2.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 2</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek3.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 3</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek4.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 4</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek5.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 5</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek6.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 6</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek7.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 7</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek8.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 8</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek9.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 9</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek10.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 10</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek11.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 11</a></li>
+                <li class="nav-item opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek12.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 12</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="mt-24 py-12 px-8 max-w-7xl mx-auto">
+        <!-- Page Title -->
+        <div class="bg-white rounded-3xl p-12 shadow-2xl text-center mb-12">
+            <h1 class="text-6xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                CSS Styling en Layout
+            </h1>
+        </div>
+
+        <!-- Intro sectie -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-6">Ontwerp proces</h2>
+            <div class="text-gray-600 leading-relaxed text-2xl space-y-5">
+                <p>
+                    In week 7 lag de focus voornaamlijk op de styling en lay-out van mijn code.
+                    Ik heb gewerkt aan het verfijnen van de visuele opbouw zodat het geheel minder standaard oogt. 
+                    Door aanpassingen in CSS heb ik geprobeerd meer structuur te brengen in de interface.
+                    Het doel was om de code niet alleen functioneel te maken, maar ook visueel overtuigend.
+                </p>
+            </div>
+        </div>
+
+        <!-- Layout Demonstrations -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-8">Layout Technieken</h2>
+            
+            <!-- Flexbox Demo -->
+            <div class="bg-indigo-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-indigo-500 text-3xl font-semibold mb-4">Flexbox Layout</h3>
+                <p class="text-gray-600 mb-6 text-xl leading-relaxed">
+                    Flexbox is een krachtige lay-out methode voor het maken van flexibele en responsieve lay-outs. 
+                    Perfect voor het uitlijnen van elementen in één dimensie (horizontaal of verticaal).
+                </p>
+                <div class="flex gap-4 flex-wrap mt-4">
+                    <div class="flex-1 min-w-[150px] bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 rounded-xl text-center font-semibold text-xl">Item 1</div>
+                    <div class="flex-1 min-w-[150px] bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 rounded-xl text-center font-semibold text-xl">Item 2</div>
+                    <div class="flex-1 min-w-[150px] bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 rounded-xl text-center font-semibold text-xl">Item 3</div>
+                </div>
+            </div>
+
+            <!-- Grid Demo -->
+            <div class="bg-indigo-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-indigo-500 text-3xl font-semibold mb-4">Grid Layout</h3>
+                <p class="text-gray-600 mb-6 text-xl leading-relaxed">
+                    CSS Grid is ideaal voor het maken van complexe twee-dimensionale lay-outs. 
+                    Het geeft je volledige controle over rijen en kolommen.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">1</div>
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">2</div>
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">3</div>
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">4</div>
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">5</div>
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-xl text-center font-semibold text-xl">6</div>
+                </div>
+            </div>
+
+            <!-- Box Model Demo -->
+            <div class="bg-indigo-50 rounded-2xl p-8">
+                <h3 class="text-indigo-500 text-3xl font-semibold mb-4">Box Model</h3>
+                <p class="text-gray-600 mb-6 text-xl leading-relaxed">
+                    Het CSS box model beschrijft hoe elementen op de pagina ruimte innemen. 
+                    Het bestaat uit content, padding, border en margin.
+                </p>
+                <div class="bg-white border-4 border-indigo-500 p-8 my-8 rounded-xl">
+                    <div class="bg-indigo-100 p-6 rounded-lg text-center text-indigo-500 font-semibold text-xl">
+                        Dit is de content<br>
+                        (met padding, border en margin)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS Properties -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-8">Belangrijke CSS Properties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Kleuren</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">color</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">background-color</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Bepaal de tekst- en achtergrondkleuren van elementen. Gebruik hex codes, RGB of kleur namen.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Lettertypen</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">font-family</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">font-size</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">font-weight</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Stijl je tekst met verschillende lettertypen, groottes en gewichten.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Spacing</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">margin</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">padding</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Creëer ruimte rondom en binnen elementen voor een betere lay-out.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Borders</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">border</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">border-radius</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Voeg randen toe aan elementen en maak afgeronde hoeken.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Flexbox</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">display: flex</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">justify-content</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">align-items</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Maak flexibele lay-outs die automatisch aanpassen aan verschillende schermformaten.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Grid</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">display: grid</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">grid-template-columns</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Creëer complexe twee-dimensionale lay-outs met rijen en kolommen.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Positionering</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">position</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">top</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">left</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Bepaal de exacte positie van elementen op de pagina.</p>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Transitions</h3>
+                    <div class="space-y-2 mb-4">
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">transition</code>
+                        <code class="block bg-indigo-500 text-white px-3 py-2 rounded font-mono text-sm">transform</code>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">Voeg vloeiende animaties toe aan je elementen voor een betere gebruikerservaring.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Palette -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-6">Kleurenpalet Voorbeelden</h2>
+            <p class="text-gray-600 text-xl mb-8 leading-relaxed">
+                Kleuren zijn essentieel voor het maken van aantrekkelijke websites. 
+                Hier zijn enkele populaire kleurcombinaties:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <div class="h-32 bg-indigo-500 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#667eea</span>
+                </div>
+                <div class="h-32 bg-purple-600 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#764ba2</span>
+                </div>
+                <div class="h-32 bg-green-500 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#10b981</span>
+                </div>
+                <div class="h-32 bg-red-500 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#ef4444</span>
+                </div>
+                <div class="h-32 bg-amber-500 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#f59e0b</span>
+                </div>
+                <div class="h-32 bg-violet-500 rounded-xl shadow-lg flex items-end p-4">
+                    <span class="text-white font-semibold text-lg">#8b5cf6</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Voorbeelden -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-8">Code Voorbeelden</h2>
+            
+            <!-- Code Example 1 -->
+            <div class="bg-gray-900 rounded-2xl p-8 mb-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Basis CSS Styling</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">.mijn-element</span> {
+  <span class="text-cyan-400">color</span>: <span class="text-orange-300">#667eea</span>;
+  <span class="text-cyan-400">background-color</span>: <span class="text-orange-300">white</span>;
+  <span class="text-cyan-400">padding</span>: <span class="text-orange-300">20px</span>;
+  <span class="text-cyan-400">margin</span>: <span class="text-orange-300">10px</span>;
+  <span class="text-cyan-400">border-radius</span>: <span class="text-orange-300">10px</span>;
+  <span class="text-cyan-400">box-shadow</span>: <span class="text-orange-300">0 5px 15px rgba(0, 0, 0, 0.1)</span>;
+}</code></pre>
+            </div>
+
+            <!-- Code Example 2 -->
+            <div class="bg-gray-900 rounded-2xl p-8 mb-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Flexbox Voorbeeld</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">.flex-container</span> {
+  <span class="text-cyan-400">display</span>: <span class="text-orange-300">flex</span>;
+  <span class="text-cyan-400">justify-content</span>: <span class="text-orange-300">space-between</span>;
+  <span class="text-cyan-400">align-items</span>: <span class="text-orange-300">center</span>;
+  <span class="text-cyan-400">gap</span>: <span class="text-orange-300">1rem</span>;
+  <span class="text-cyan-400">flex-wrap</span>: <span class="text-orange-300">wrap</span>;
+}
+
+<span class="text-blue-400">.flex-item</span> {
+  <span class="text-cyan-400">flex</span>: <span class="text-orange-300">1</span>;
+  <span class="text-cyan-400">min-width</span>: <span class="text-orange-300">200px</span>;
+}</code></pre>
+            </div>
+
+            <!-- Code Example 3 -->
+            <div class="bg-gray-900 rounded-2xl p-8 mb-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Grid Layout Voorbeeld</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">.grid-container</span> {
+  <span class="text-cyan-400">display</span>: <span class="text-orange-300">grid</span>;
+  <span class="text-cyan-400">grid-template-columns</span>: <span class="text-orange-300">repeat(3, 1fr)</span>;
+  <span class="text-cyan-400">gap</span>: <span class="text-orange-300">2rem</span>;
+}
+
+<span class="text-blue-400">@media (max-width: 768px)</span> {
+  <span class="text-blue-400">.grid-container</span> {
+    <span class="text-cyan-400">grid-template-columns</span>: <span class="text-orange-300">1fr</span>;
+  }
+}</code></pre>
+            </div>
+
+            <!-- Code Example 4 -->
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Hover Effecten en Transitions</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">.button</span> {
+  <span class="text-cyan-400">background</span>: <span class="text-orange-300">#667eea</span>;
+  <span class="text-cyan-400">color</span>: <span class="text-orange-300">white</span>;
+  <span class="text-cyan-400">padding</span>: <span class="text-orange-300">1rem 2rem</span>;
+  <span class="text-cyan-400">border-radius</span>: <span class="text-orange-300">50px</span>;
+  <span class="text-cyan-400">transition</span>: <span class="text-orange-300">all 0.3s ease</span>;
+}
+
+<span class="text-blue-400">.button:hover</span> {
+  <span class="text-cyan-400">transform</span>: <span class="text-orange-300">translateY(-3px)</span>;
+  <span class="text-cyan-400">box-shadow</span>: <span class="text-orange-300">0 10px 25px rgba(102, 126, 234, 0.4)</span>;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation toggle functie
+        function toggleNav() {
+            const navSlider = document.getElementById('navSlider');
+            const navTitle = document.getElementById('navTitle');
+            const menuItems = document.querySelectorAll('.nav-item');
+            
+            navSlider.classList.toggle('top-0');
+            navSlider.classList.toggle('-top-full');
+            
+            if (navSlider.classList.contains('top-0')) {
+                setTimeout(() => {
+                    navTitle.classList.remove('opacity-0', '-translate-y-5');
+                    menuItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.remove('opacity-0', '-translate-y-8');
+                        }, 300 + (index * 50));
+                    });
+                }, 100);
+            } else {
+                navTitle.classList.add('opacity-0', '-translate-y-5');
+                menuItems.forEach(item => {
+                    item.classList.add('opacity-0', '-translate-y-8');
+                });
+            }
+        }
+
+        // Event listeners
+        document.getElementById('menuBtn').addEventListener('click', toggleNav);
+        document.getElementById('closeBtn').addEventListener('click', toggleNav);
+
+        // Close navigation when clicking outside
+        document.addEventListener('click', function(e) {
+            const navSlider = document.getElementById('navSlider');
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            
+            if (navSlider.classList.contains('top-0') && 
+                !navSlider.contains(e.target) && 
+                e.target !== menuBtn && 
+                !menuBtn.contains(e.target)) {
+                toggleNav();
+            }
+        });
+
+        // Close navigation with escape key
+        document.addEventListener('keydown', function(e) {
+            const navSlider = document.getElementById('navSlider');
+            if (e.key === 'Escape' && navSlider.classList.contains('top-0')) {
+                toggleNav();
+            }
+        });
+    </script>
+</body>
+</html>

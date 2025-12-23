@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introductie Coderen HTML - Ryan Verhoeven 1GDM2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'caveat': ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Caveat', cursive;
+        }
+        .nav-slider {
+            transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-500 to-purple-600 min-h-screen text-gray-800">
+    <!-- Header -->
+    <div class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-lg px-8 py-6 shadow-lg z-50 flex justify-between items-center">
+        <div class="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+            Ryan Verhoeven
+        </div>
+        <button onclick="toggleNav()" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold text-lg flex items-center gap-2 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300">
+            <span class="inline-block w-5 h-0.5 bg-white relative before:content-[''] before:absolute before:w-5 before:h-0.5 before:bg-white before:left-0 before:-top-1.5 after:content-[''] after:absolute after:w-5 after:h-0.5 after:bg-white after:left-0 after:bottom-1.5"></span>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <!-- Horizontale slider navigatie -->
+    <div id="navSlider" class="nav-slider fixed -top-full left-0 right-0 bg-gradient-to-br from-indigo-500 to-purple-600 z-40 shadow-2xl">
+        <button onclick="toggleNav()" class="absolute top-6 right-8 bg-white/20 border-2 border-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center text-2xl hover:bg-white/30 hover:rotate-90 transition-all duration-300">
+            ×
+        </button>
+        <div class="py-24 px-8 max-w-7xl mx-auto">
+            <h2 id="navTitle" class="text-white text-5xl font-bold text-center mb-8 opacity-0 -translate-y-5 transition-all duration-500 delay-200">
+                Navigatie
+            </h2>
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none">
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zprogressiefile.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">HOME</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek1.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 1</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek2.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 2</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek3.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 3</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek4.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 4</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek5.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 5</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek6.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 6</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek7.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 7</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek8.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 8</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek9.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 9</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek10.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 10</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek11.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 11</a></li>
+                <li class="opacity-0 -translate-y-8 transition-all duration-500"><a href="zweek12.html" class="block p-6 bg-white/15 backdrop-blur-lg text-white no-underline rounded-2xl text-center font-semibold text-xl border-2 border-white/20 hover:bg-white/25 hover:-translate-y-1 hover:shadow-xl hover:border-white/40 transition-all duration-300">Week 12</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="mt-24 py-12 px-8 max-w-7xl mx-auto">
+        <!-- Page Title -->
+        <div class="bg-white rounded-3xl p-12 shadow-2xl text-center mb-12">
+            <h1 class="text-6xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                Introductie basis HTML en fontstudie
+            </h1>
+        </div>
+
+        <!-- Intro sectie -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-6">Ontwerp proces</h2>
+            <div class="text-gray-600 leading-relaxed text-2xl space-y-5">
+                <p>
+                    Deze week stond in het teken van typografie en kleurcontrast. Het ontwerp vraagt om een rustig, modern lettertype dat vlot leesbaar is. Inter bleek al vanaf de eerste Figma-versies een sterke keuze, maar ik heb via Google Fonts ook andere opties onderzocht. Toch kwam daar geen beter alternatief uit voort. Daarom bleef Inter Bold het hoofdlettertype, aangevuld met Instrument Sans Regular voor ondersteunende tekst. Beide fonts sluiten goed aan bij het strakke en hedendaagse karakter van het ontwerp. De definitieve lettergroottes worden later vastgelegd, waarbij de gulden regel zal dienen om een evenwichtige hiërarchie tussen titels en tekst te bepalen.
+                </p>
+                <p>
+                    De kleur- en contraststudie verliep vlot, aangezien eerder al twee hoofdkleuren met voldoende contrast waren geselecteerd. Aanvullend heb ik nog enkele accentkleuren gekozen voor iconen en vertragingen. Voor de iconografie maakte ik gebruik van Google Icons, wat zorgt voor visuele consistentie in lijndikte, vorm en stijl binnen het ontwerp.
+                </p>
+            </div>
+        </div>
+
+        <!-- Code voorbeelden -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-8">Code Voorbeelden</h2>
+            
+            <!-- Code Example 1 -->
+            <div class="bg-gray-900 rounded-2xl p-8 mb-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Basis HTML Structuur</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-blue-400">&lt;html</span> <span class="text-cyan-400">lang</span>=<span class="text-orange-300">"nl"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;head&gt;</span>
+    <span class="text-blue-400">&lt;meta</span> <span class="text-cyan-400">charset</span>=<span class="text-orange-300">"UTF-8"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;title&gt;</span>Mijn Eerste Webpagina<span class="text-blue-400">&lt;/title&gt;</span>
+  <span class="text-blue-400">&lt;/head&gt;</span>
+  <span class="text-blue-400">&lt;body&gt;</span>
+    <span class="text-blue-400">&lt;h1&gt;</span>Welkom op mijn website!<span class="text-blue-400">&lt;/h1&gt;</span>
+    <span class="text-blue-400">&lt;p&gt;</span>Dit is mijn eerste paragraaf.<span class="text-blue-400">&lt;/p&gt;</span>
+  <span class="text-blue-400">&lt;/body&gt;</span>
+<span class="text-blue-400">&lt;/html&gt;</span></code></pre>
+            </div>
+
+            <!-- Code Example 2 -->
+            <div class="bg-gray-900 rounded-2xl p-8 mb-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Links en Afbeeldingen</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">&lt;a</span> <span class="text-cyan-400">href</span>=<span class="text-orange-300">"https://www.example.com"</span><span class="text-blue-400">&gt;</span>Klik hier<span class="text-blue-400">&lt;/a&gt;</span>
+
+<span class="text-blue-400">&lt;img</span> <span class="text-cyan-400">src</span>=<span class="text-orange-300">"afbeelding.jpg"</span> <span class="text-cyan-400">alt</span>=<span class="text-orange-300">"Beschrijving"</span><span class="text-blue-400">&gt;</span></code></pre>
+            </div>
+
+            <!-- Code Example 3 -->
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-lg overflow-x-auto">
+                <h3 class="text-white text-2xl font-semibold mb-4">Lijsten</h3>
+                <pre class="text-gray-300 font-mono text-base leading-relaxed"><code><span class="text-blue-400">&lt;ul&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Item 1<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Item 2<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Item 3<span class="text-blue-400">&lt;/li&gt;</span>
+<span class="text-blue-400">&lt;/ul&gt;</span></code></pre>
+            </div>
+        </div>
+
+        <!-- HTML Elementen Overzicht -->
+        <div class="bg-white rounded-2xl p-12 shadow-xl mb-12">
+            <h2 class="text-indigo-500 text-5xl font-bold mb-8">Belangrijke HTML Elementen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Element Card 1 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Headings</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;h1&gt;</code> tot <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;h6&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Worden gebruikt voor titels en koppen. H1 is de belangrijkste, H6 de minst belangrijke.</p>
+                </div>
+
+                <!-- Element Card 2 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Paragrafen</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;p&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Definieert een paragraaf tekst. Browsers voegen automatisch witruimte toe voor en na een paragraaf.</p>
+                </div>
+
+                <!-- Element Card 3 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Links</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;a&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Creëert een hyperlink naar andere webpagina's, bestanden, of locaties binnen dezelfde pagina.</p>
+                </div>
+
+                <!-- Element Card 4 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Afbeeldingen</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;img&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Voegt een afbeelding toe aan de pagina. Vereist een src (bron) en alt (alternatieve tekst) attribuut.</p>
+                </div>
+
+                <!-- Element Card 5 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Divs</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;div&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Een container element gebruikt voor het groeperen van andere elementen en toepassen van styling.</p>
+                </div>
+
+                <!-- Element Card 6 -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border-l-4 border-indigo-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-indigo-500 text-2xl font-bold mb-4">Lijsten</h3>
+                    <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;ul&gt;</code> en <code class="bg-indigo-500 text-white px-3 py-1 rounded text-base font-mono">&lt;ol&gt;</code>
+                    <p class="text-gray-600 mt-4 text-xl leading-relaxed">Unordered lists (bullet points) en ordered lists (genummerd) voor het organiseren van items.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const navSlider = document.getElementById('navSlider');
+            const navTitle = document.getElementById('navTitle');
+            const menuItems = document.querySelectorAll('#navSlider ul li');
+            
+            navSlider.classList.toggle('top-0');
+            navSlider.classList.toggle('-top-full');
+            
+            if (navSlider.classList.contains('top-0')) {
+                setTimeout(() => {
+                    navTitle.classList.remove('opacity-0', '-translate-y-5');
+                    menuItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.remove('opacity-0', '-translate-y-8');
+                        }, 300 + (index * 50));
+                    });
+                }, 100);
+            } else {
+                navTitle.classList.add('opacity-0', '-translate-y-5');
+                menuItems.forEach(item => {
+                    item.classList.add('opacity-0', '-translate-y-8');
+                });
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            const navSlider = document.getElementById('navSlider');
+            const menuBtn = document.querySelector('button[onclick="toggleNav()"]');
+            
+            if (navSlider.classList.contains('top-0') && 
+                !navSlider.contains(e.target) && 
+                !Array.from(document.querySelectorAll('button[onclick="toggleNav()"]')).some(btn => btn.contains(e.target))) {
+                toggleNav();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            const navSlider = document.getElementById('navSlider');
+            if (e.key === 'Escape' && navSlider.classList.contains('top-0')) {
+                toggleNav();
+            }
+        });
+    </script>
+</body>
+</html>
